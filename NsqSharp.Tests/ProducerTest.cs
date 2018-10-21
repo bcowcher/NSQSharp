@@ -391,7 +391,7 @@ namespace NsqSharp.Tests
                                 {
                                     errorMessage = string.Format("P{0} Producer not accepting Publish requests.\n" +
                                         "Producer Threads: {1}\nTime between NSQd shutdowns:{2}ms\n" +
-                                        "Shutdown Count: {3}/{4}\nLast Exception Message: {5}", publisher._id,
+                                        "Shutdown Count: {3}/{4}\nLast Exception Message: {5}", publisher.ID,
                                         publishingThreads, millisecondsBetweenNsqdShutdown, i + 1, shutdownCount,
                                         ex.Message);
                                     Console.WriteLine(errorMessage);
@@ -423,7 +423,7 @@ namespace NsqSharp.Tests
                     {
                         errorMessage = string.Format("P{0} Producer not accepting Publish requests in test of 1000 messages.\n" +
                             "Producer Threads: {1}\nTime between NSQd shutdowns:{2}ms\n" +
-                            "Publish #: {3}/1000", publisher._id, publishingThreads,
+                            "Publish #: {3}/1000", publisher.ID, publishingThreads,
                             millisecondsBetweenNsqdShutdown, j + 1);
                         Console.WriteLine(errorMessage);
                         throw new Exception(errorMessage, ex);

@@ -10,7 +10,7 @@ using NsqSharp.Utils;
 
 namespace NsqSharp.Bus
 {
-    internal class NsqBus : IBus
+    public class NsqBus : IBus
     {
         private readonly Dictionary<string, List<MessageHandlerMetadata>> _topicChannelHandlers;
         private readonly IObjectBuilder _dependencyInjectionContainer;

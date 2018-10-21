@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PointOfSale.Handlers.CustomerHandlers</RootNamespace>
     <AssemblyName>PointOfSale.Handlers.CustomerHandlers</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -68,6 +68,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\NsqCore\NsqCore.csproj">
+      <Project>{f6f1ac52-3558-465c-b360-2f99c67d7a24}</Project>
+      <Name>NsqCore</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PointOfSale.Common\PointOfSale.Common.csproj">
       <Project>{75654883-d9c6-498f-9af5-ac1201769890}</Project>
       <Name>PointOfSale.Common</Name>

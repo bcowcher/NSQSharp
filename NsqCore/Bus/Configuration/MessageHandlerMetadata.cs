@@ -3,7 +3,7 @@ using NsqSharp.Bus.Logging;
 
 namespace NsqSharp.Bus.Configuration
 {
-    internal class MessageHandlerMetadata
+    public class MessageHandlerMetadata
     {
         public string Topic { get; set; }
         public string Channel { get; set; }

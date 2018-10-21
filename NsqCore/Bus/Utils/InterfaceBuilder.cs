@@ -17,7 +17,7 @@ namespace NsqSharp.Bus.Utils
         static InterfaceBuilder()
         {
             var assemblyName = new AssemblyName(Guid.NewGuid().ToString());
-            var assemblyBuilder = AppDomain.CurrentDomain.DefineDynamicAssembly(assemblyName, AssemblyBuilderAccess.Run);
+            var assemblyBuilder = AssemblyBuilder.DefineDynamicAssembly(assemblyName,AssemblyBuilderAccess.Run);
             _moduleBuilder = assemblyBuilder.DefineDynamicModule(assemblyName.Name);
         }
 
@@ -101,7 +101,7 @@ namespace NsqSharp.Bus.Utils
                 typeBuilder.DefineMethodOverride(setAccessor, propertyInfo.GetSetMethod());
             }
 
-            return typeBuilder.CreateType();
+            return typeBuilder.CreateTypeInfo();
         }
 
         private static string CamelCase(string name)
@@ -124,4 +124,5 @@ namespace NsqSharp.Bus.Utils
             return properties;
         }
     }
+    
 }

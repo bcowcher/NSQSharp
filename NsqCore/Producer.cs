@@ -81,6 +81,8 @@ namespace NsqSharp
         private readonly object _guard = new object();
 
         private readonly Func<Producer, IConn> _connFactory;
+
+        public long ID { get => _id; }
     }
 
     /// <summary>

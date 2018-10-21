@@ -3,18 +3,18 @@ using System.Runtime.InteropServices;
 
 namespace NsqSharp.Bus.Utils
 {
-    internal static class NativeMethods
+    public static class NativeMethods
     {
         [DllImport("kernel32.dll")]
-        internal static extern IntPtr GetConsoleWindow();
+        public static extern IntPtr GetConsoleWindow();
 
         [DllImport("Kernel32")]
-        internal static extern bool SetConsoleCtrlHandler(HandlerRoutineCallback handler, bool add);
+        public static extern bool SetConsoleCtrlHandler(HandlerRoutineCallback handler, bool add);
     }
 
-    internal delegate bool HandlerRoutineCallback(CtrlType dwCtrlType);
+    public delegate bool HandlerRoutineCallback(CtrlType dwCtrlType);
 
-    internal enum CtrlType
+    public enum CtrlType
     {
         CTRL_C_EVENT = 0,
         CTRL_BREAK_EVENT,

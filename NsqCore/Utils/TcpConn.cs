@@ -7,7 +7,7 @@ using NsqSharp.Utils.Extensions;
 
 namespace NsqSharp.Utils
 {
-    internal class TcpConn : ITcpConn
+    public class TcpConn : ITcpConn
     {
         // TODO: Might be better to use Sockets than TcpClient http://angrez.blogspot.com/2007/02/flush-socket-in-net-or-c.html
         // https://msdn.microsoft.com/en-us/library/system.net.sockets.socket.setsocketoption.aspx
