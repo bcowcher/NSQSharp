@@ -1,3 +1,12 @@
+About This Fork
+===============
+
+Essentially I needed a .Net Core ready library for NSQ and since I was using this for my current work I decided to take a stab at making this one ready for it.
+
+I've left the windows specific parts in the NsqSharp directory and migrated everything else pretty much as is into the NsqCore directory with a few minor changes (mostly around the reflection parts and visibility of certain objects) as the NsqSharp project now depends on NsqCore.
+
+Technically, it *should* just be a drop in replacement in any .Net Core app but I can't give a 100% guarantee on that.
+
 NsqSharp
 ========
 
