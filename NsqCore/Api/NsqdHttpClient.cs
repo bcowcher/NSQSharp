@@ -128,7 +128,7 @@ namespace NsqSharp.Api
             ValidateTopic(topic);
 
             string route = string.Format("/topic/empty?topic={0}", System.Net.WebUtility.UrlEncode(topic));
-            Console.WriteLine(route);
+
             return Post(route);
         }
 
@@ -143,7 +143,7 @@ namespace NsqSharp.Api
             ValidateTopicAndChannel(topic, channel);
 
             string route = string.Format("/channel/empty?topic={0}&channel={1}", System.Net.WebUtility.UrlEncode(topic), System.Net.WebUtility.UrlEncode(channel));
-            Console.WriteLine(route);
+
             return Post(route);
         }
 
