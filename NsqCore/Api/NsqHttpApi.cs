@@ -46,7 +46,7 @@ namespace NsqSharp.Api
         {
             ValidateTopic(topic);
 
-            string route = string.Format("/topic/create?topic={0}", topic);
+            string route = string.Format("/topic/create?topic={0}", System.Net.WebUtility.UrlEncode(topic));
             return Post(route);
         }
 
@@ -59,7 +59,7 @@ namespace NsqSharp.Api
         {
             ValidateTopic(topic);
 
-            string route = string.Format("/topic/delete?topic={0}", topic);
+            string route = string.Format("/topic/delete?topic={0}", System.Net.WebUtility.UrlEncode(topic));
             return Post(route);
         }
 
@@ -73,7 +73,7 @@ namespace NsqSharp.Api
         {
             ValidateTopicAndChannel(topic, channel);
 
-            string route = string.Format("/channel/create?topic={0}&channel={1}", topic, channel);
+            string route = string.Format("/channel/create?topic={0}&channel={1}", System.Net.WebUtility.UrlEncode(topic), System.Net.WebUtility.UrlEncode(channel));
             return Post(route);
         }
 
@@ -87,7 +87,7 @@ namespace NsqSharp.Api
         {
             ValidateTopicAndChannel(topic, channel);
 
-            string route = string.Format("/channel/delete?topic={0}&channel={1}", topic, channel);
+            string route = string.Format("/channel/delete?topic={0}&channel={1}", System.Net.WebUtility.UrlEncode(topic), System.Net.WebUtility.UrlEncode(channel));
             return Post(route);
         }
 
@@ -183,7 +183,7 @@ namespace NsqSharp.Api
         protected static byte[] Request(string endpoint, HttpMethod httpMethod, int timeoutMilliseconds, byte[] body = null)
         {
             var webRequest = (HttpWebRequest)WebRequest.Create(endpoint);
-            webRequest.Proxy = WebRequest.DefaultWebProxy;
+            webRequest.Proxy = null;
             webRequest.Method = httpMethod == HttpMethod.Post ? "POST" : "GET";
             webRequest.Timeout = timeoutMilliseconds;
             webRequest.Accept = "application/vnd.nsq; version=1.0";
